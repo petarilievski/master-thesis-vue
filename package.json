@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "watch": "vue-cli-service serve --watch"
   },
   "dependencies": {
     "@ar-js-org/ar.js": "https://github.com/AR-js-org/AR.js.git#c73e90d9732efa84b6d68a51710887ab98d9da5f",
