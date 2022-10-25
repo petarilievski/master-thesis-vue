@@ -8,14 +8,17 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
-    "vue": "^3.2.13",
-    "aframe": "^1.2.0",
     "@ar-js-org/ar.js": "https://github.com/AR-js-org/AR.js.git#c73e90d9732efa84b6d68a51710887ab98d9da5f",
+    "aframe": "^1.2.0",
     "arjs-gestures": "https://github.com/fcor/arjs-gestures.git",
+    "autoprefixer": "^10",
     "axios": "^0.21.1",
     "browserify-css": "*",
-    "envify": "*"
+    "core-js": "^3.8.3",
+    "envify": "*",
+    "postcss": "^8",
+    "tailwindcss": "^3",
+    "vue": "^3.2.13"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -24,7 +27,8 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "vue-cli-plugin-tailwind": "~3.0.0"
   },
   "eslintConfig": {
     "root": true,

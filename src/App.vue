@@ -1,13 +1,20 @@
 <template>
-  <AFrame />
+  <div style="position: absolute; z-index: 10; display: flex; justify-content: center;">
+    <Nav />
+  </div>
+  <div style="position: absolute; margin-top: 500px;">
+    <AFrame />
+  </div>
 </template>
 
 <script>
 import AFrame from "@/components/Aframe";
+import Nav from "@/components/navbar/Nav";
 
 export default {
   name: 'App',
   components: {
+    Nav,
     AFrame,
   }
 }
