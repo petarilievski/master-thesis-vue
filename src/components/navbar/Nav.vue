@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="subcontainer">
-      <img src="../../assets/FEIT-logo.png" alt="FEEIT" height="50" width="50"/>
+      <img src="../../../public/assets/FEIT-logo.png" alt="FEEIT" height="50" width="50"/>
       <div style="color: black; font-weight: bolder; align-items: center; display: flex">Virtual&nbsp;Laboratory</div>
     </div>
 

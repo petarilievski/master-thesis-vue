@@ -6,7 +6,7 @@
      <div>
        <home-tab/>
      </div>
-     <div v-if="activePopup" id="popup">
+     <div v-if="activePopup" id="popup" class="relative z-1000">
        <plc-tab />
      </div>
    </div>

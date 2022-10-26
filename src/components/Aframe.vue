@@ -1,30 +1,30 @@
 <template>
   <div id="embeddedScene">
-    <a-scene
-        embedded  vr-mode-ui="enabled: false;"
-        arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+    <a-scene embedded  vr-mode-ui="enabled: false;" arjs>
 
-      <a-assets>
-        <img id="grid" src="../assets/border.png" />
-      </a-assets>
+<!--      <a-assets>-->
+<!--        <img id="grid" src="../assets/border.png" />-->
+<!--      </a-assets>-->
 
-      <a-marker type="barcode" value="0" id="m0" registerevents>
+      <a-marker id="cite" type="pattern" url="marker/pt-cite.patt">
+        <a-plane
+            src="assets/plc.jpg"
+            scale="7.3 7.3 7.3"
+            rotation="-90 0 0"
+            position="0 0 -3"
+        >
+        </a-plane>
         <a-sphere radius="0.10" color="red"></a-sphere>
-        <!-- this group rotates the cylinder to point at marker m1 -->
-        <a-entity id="cylinderGroup"></a-entity>
       </a-marker>
 
-      <a-marker type="barcode" value="1" id="m1" registerevents>
-        <a-sphere radius="0.10" color="red"></a-sphere>
-      </a-marker>
-
-<!--      <a-marker type="pattern" url="/data" id="baseMarker" >-->
+<!--      <a-marker type="barcode" value="1" id="m1" registerevents>-->
+<!--        <a-sphere radius="0.10" color="red"></a-sphere>-->
 <!--      </a-marker>-->
 
-<!--      <a-entity camera></a-entity>-->
+<!--      <a-marker type="pattern" url="data/kanji.patt" id="baseMarker" >-->
+<!--      </a-marker>-->
 
-      <a-entity run></a-entity>
-
+<!--      <a-entity id="camera" camera></a-entity>-->
     </a-scene>
   </div>
 </template>
@@ -34,26 +34,36 @@ import '@ar-js-org/ar.js/aframe/build/aframe-ar'
 
 export default {
   name: 'a-frame',
+  data() {
+    return {
+      markerVisible: { m0: false, m1: false, m2: false, m3: false, m4: false }
+    }
+  },
   methods: {
-    handleVideo () {
-      // const m = document.querySelector('a-marker#frac3')
-      // m.addEventListener('markerFound', () => {
-      //   const entity = document.querySelector('video')
-      //   entity.play()
-      //   console.log('found')
-      // })
-      // m.addEventListener('markerLost', () => {
-      //   const entity = document.querySelector('video')
-      //   entity.pause()
-      //   console.log('lost')
-      // })
+    handleInitEvents () {
+      for (let markerVisibleKey in this.markerVisible) {
+        this.addEvents(markerVisibleKey)
+      }
+    },
+    addEvents(m) {
+      const marker = document.querySelector("#" + m)
+      marker.addEventListener('markerFound', () => {
+        const entity = document.querySelector('video')
+        entity.play()
+        this.markerVisible[m] = true
+      })
+      marker.addEventListener('markerLost', () => {
+        const entity = document.querySelector('video')
+        entity.pause()
+        this.markerVisible[m] = false
+      })
     },
     handleBody() {
     }
   },
   mounted () {
-    this.handleVideo()
-    this.handleBody()
+    // this.handleInitEvents()
+    // this.handleBody()
   },
 }
 </script>

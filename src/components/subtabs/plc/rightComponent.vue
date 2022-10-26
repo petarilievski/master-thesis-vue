@@ -1,6 +1,6 @@
 <template>
   <div class="stack">
-    <img src="../../../assets/plc.jpg" alt="FEEIT"/>
+    <img src="../../../../public/assets/plc.jpg" alt="FEEIT"/>
     <div class="dot pow"></div>
     <div id="run" class="dot run"></div>
     <div id="toggle" @click="changeRun" class="trigger">
