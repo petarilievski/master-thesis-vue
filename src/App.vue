@@ -50,4 +50,8 @@ export default {
   margin-left: auto;
   margin-top: 15%;
 }
+@media only screen and (min-width: 1200px) {
+  #popup { margin-top: 15% }
+}
+
 </style>
