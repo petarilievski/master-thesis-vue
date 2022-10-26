@@ -44,7 +44,7 @@
             knob-color="#1D4ED8"
             @update="setSliderValue"
             progress-color="#3482F6"/>
-          <div class="ml-10">{{sliderValue.toFixed(1) + ' V'}}</div>
+          <div class="ml-10 text-blue-700">{{sliderValue.toFixed(1) + ' V'}}</div>
       </div>
 
     </div>
