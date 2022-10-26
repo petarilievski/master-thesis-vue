@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      activeTab: 0
+      activeTab: 1
     }
   },
   methods: {

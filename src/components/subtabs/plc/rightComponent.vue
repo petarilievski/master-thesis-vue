@@ -1,6 +1,7 @@
 <template>
   <div>
-    <img src="../../../assets/plc.jpg" alt="FEEIT" class="imgClass"/>
+    <div></div>
+    <img src="../../../assets/plc.jpg" alt="FEEIT"/>
   </div>
 </template>
 
@@ -11,8 +12,4 @@ export default {
 </script>
 
 <style scoped>
-.imgClass {
-  height: 80%;
-  margin-left: 20%;
-}
 </style>

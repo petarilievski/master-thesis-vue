@@ -1,7 +1,11 @@
 <template>
   <div class="container">
-    <left-component/>
-    <right-component />
+    <div style="width:35%">
+        <left-component/>
+    </div>
+    <div style="width:65%;">
+      <right-component />
+    </div>
   </div>
 </template>
 
@@ -10,13 +14,15 @@ import LeftComponent from "@/components/subtabs/plc/leftComponent";
 import RightComponent from "@/components/subtabs/plc/rightComponent";
 export default {
   name: "plcTab",
-  components: {RightComponent, LeftComponent}
+  components: {
+    RightComponent,
+    LeftComponent}
 }
 </script>
 
 <style scoped>
 .container {
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
 }
 </style>
