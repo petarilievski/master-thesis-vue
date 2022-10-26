@@ -1,6 +1,13 @@
 <template>
     <Nav @setActiveTab="setActiveTab" :active-tab="activeTab"/>
-
+   <div style="padding: 2%">
+     <div v-if="activeTab === 0">
+       <home-tab/>
+     </div>
+     <div v-else>
+       <plc-tab />
+     </div>
+   </div>
 <!--  <div style="position: absolute; margin-top: 500px;">-->
 <!--    <AFrame />-->
 <!--  </div>-->
@@ -9,10 +16,14 @@
 <script>
 // import AFrame from "@/components/Aframe";
 import Nav from "@/components/navbar/Nav";
+import HomeTab from "@/components/tabs/homeTab";
+import PlcTab from "@/components/tabs/plcTab";
 
 export default {
   name: 'App',
   components: {
+    PlcTab,
+    HomeTab,
     Nav,
     // AFrame,
   },
