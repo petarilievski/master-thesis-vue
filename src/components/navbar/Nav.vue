@@ -6,8 +6,8 @@
     </div>
 
     <div class="subcontainer">
-      <div :style="this.activeTab === 0 ? 'color:dodgerblue;' : ''" @click="setActiveTab(0)" class="tab">Home</div>
-      <div :style="this.activeTab === 1 ? 'color:dodgerblue;' : ''" @click="setActiveTab(1)" class="tab">PLC</div>
+      <div style="color:dodgerblue;" class="tab">Home</div>
+      <div :style="this.activePopup ? 'color:dodgerblue;' : ''" @click="setActivePopup" class="tab">PLC</div>
     </div>
 
   </div>
@@ -17,14 +17,10 @@
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Nav',
-  props: ['activeTab'],
-  data() {
-    return {
-    }
-  },
+  props: ['activePopup'],
   methods: {
-    setActiveTab(tab) {
-      this.$emit('setActiveTab', tab)
+    setActivePopup() {
+      this.$emit('setActivePopup')
     }
   }
 }

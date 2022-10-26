@@ -1,6 +1,8 @@
 <template>
   <div id="embeddedScene">
-    <a-scene embedded  vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+    <a-scene
+        embedded  vr-mode-ui="enabled: false;"
+        arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
 
       <a-assets>
         <img id="grid" src="../assets/border.png" />
@@ -45,23 +47,13 @@ export default {
       //   entity.pause()
       //   console.log('lost')
       // })
+    },
+    handleBody() {
     }
   },
   mounted () {
     this.handleVideo()
-    const scene = document.querySelector('#embeddedScene')
-    scene.style.width = '50%';
+    this.handleBody()
   },
-  beforeCreate () {
-    document.body.classList.add('arjs')
-  },
-  beforeUnmount () {
-    location.reload()
-  }
 }
 </script>
-
-<style scoped>
-a-scene { display: block; width: 50%; }
-
-</style>

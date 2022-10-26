@@ -23,6 +23,8 @@ export default {
 <style scoped>
 .container {
   display: flex;
-  /*justify-content: space-between;*/
+  padding: 3% 2%;
+  background-color: white;
+  border-radius: 1%;
 }
 </style>

@@ -1,10 +1,12 @@
 <template>
-    <Nav @setActiveTab="setActiveTab" :active-tab="activeTab"/>
-   <div style="padding: 2%">
-     <div v-if="activeTab === 0">
+  <div style="position: absolute; top:0; width: 100% !important;">
+    <Nav @setActivePopup="setActivePopup" :active-popup="activePopup"/>
+  </div>
+   <div>
+     <div>
        <home-tab/>
      </div>
-     <div v-else>
+     <div v-if="activePopup" id="popup">
        <plc-tab />
      </div>
    </div>
@@ -24,12 +26,12 @@ export default {
   },
   data() {
     return {
-      activeTab: 1
+      activePopup: false
     }
   },
   methods: {
-    setActiveTab(tab) {
-      this.activeTab = tab
+    setActivePopup() {
+      this.activePopup = !this.activePopup
     }
   }
 }
@@ -41,5 +43,11 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+}
+#popup {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 15%;
 }
 </style>
