@@ -8,13 +8,9 @@
        <plc-tab />
      </div>
    </div>
-<!--  <div style="position: absolute; margin-top: 500px;">-->
-<!--    <AFrame />-->
-<!--  </div>-->
 </template>
 
 <script>
-// import AFrame from "@/components/Aframe";
 import Nav from "@/components/navbar/Nav";
 import HomeTab from "@/components/tabs/homeTab";
 import PlcTab from "@/components/tabs/plcTab";
@@ -25,7 +21,6 @@ export default {
     PlcTab,
     HomeTab,
     Nav,
-    // AFrame,
   },
   data() {
     return {
